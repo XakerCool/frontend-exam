@@ -1,0 +1,24 @@
+
+<style>
+  .todo {
+    font-size: 25px;
+  }
+  .todo:hover {
+    background-color: aqua;
+    cursor: pointer;
+  }
+</style>
+
+<div class="todo-container">
+  <div class="input-container">
+    <textarea class="input" style="height: 100px; width: 200px" #userText></textarea>
+    <button (click)="add(userText.value)">Add todo</button>
+  </div>
+  <ul class="todo-list">
+    <li class="todo" *ngFor="let todo of toDoList" class="todo" (click)="remove(todo)">
+      {{todo}}
+    </li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>
